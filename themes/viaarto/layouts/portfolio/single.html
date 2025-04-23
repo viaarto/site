@@ -37,25 +37,32 @@
 
 {{ partial "call-to-action.html" . }}
 
-{{/* Added JavaScript block */}}
+{{/* JavaScript block atualizado para funcionar tanto localmente quanto no GitHub Pages */}}
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const voltarLink = document.getElementById('voltar-link');;
+    const voltarLink = document.getElementById('voltar-link');
     if (voltarLink) {
-      const baseUrl = voltarLink.dataset.baseurl;; // Get base URL from data attribute
-      let homeUrl = "";;
-      if (baseUrl) {
-        homeUrl = baseUrl.charAt(baseUrl.length - 1) === '/' ? baseUrl : baseUrl + '/';; // Ensure trailing slash for comparison
-      }
-      const referrer = document.referrer || "";; // Ensure referrer exists
-
-      // Check if referrer is the homepage (or empty/different domain)
-      if (referrer === homeUrl || !referrer.startsWith(baseUrl)) {
-        // If came from homepage OR directly OR different site, link to homepage anchor
-        voltarLink.href = "{{ "/" | relURL }}#project";;
+      // Obter a base URL do site atual
+      const baseUrl = voltarLink.dataset.baseurl;
+      
+      // Verificar de onde o usuário veio
+      const referrer = document.referrer;
+      const currentHost = window.location.host;
+      
+      // Verificar se o referrer é do mesmo site
+      const isInternalReferrer = referrer && referrer.includes(currentHost);
+      
+      // Verificar se o referrer é a página inicial
+      const isFromHomepage = isInternalReferrer && 
+                            (referrer.endsWith(baseUrl) || 
+                             referrer.endsWith(baseUrl + 'index.html'));
+      
+      if (!isInternalReferrer || isFromHomepage) {
+        // Se veio da homepage, acesso direto ou site externo
+        voltarLink.href = baseUrl + '#project';
       } else {
-        // Otherwise (likely came from /portfolio/ or another internal page), link to portfolio list
-        voltarLink.href = "{{ "portfolio/" | relURL }}";;
+        // Se veio de outra página interna
+        voltarLink.href = baseUrl + 'portfolio/';
       }
     }
   });
