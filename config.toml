@@ -1,4 +1,4 @@
-baseURL       = "/"
+baseURL       = "."
 languageCode  = "pt-br"
 title         = "Via Arto - Brindes Personalizados | Brindes Corporativos | Produtos Personalizados"
 theme         = "viaarto"

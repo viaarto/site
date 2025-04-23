@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>FEIRAS on Via Arto - Brindes Personalizados | Brindes Corporativos | Produtos Personalizados</title>
-    <link>/landing/</link>
+    <link>./landing/</link>
     <description>Recent content in FEIRAS on Via Arto - Brindes Personalizados | Brindes Corporativos | Produtos Personalizados</description>
     <generator>Hugo</generator>
     <language>pt-br</language>
     <lastBuildDate>Sat, 01 Jan 2000 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/landing/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="./landing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Oferta Especial para Expositores da CIOSP 2024</title>
-      <link>/landing/ciosp2024/</link>
+      <link>./landing/ciosp2024/</link>
       <pubDate>Sat, 01 Jan 2000 00:00:00 +0000</pubDate>
-      <guid>/landing/ciosp2024/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;/images/landing/banner-41ciosp-landing-page.jpg&#34; alt=&#34;Brindes para CIOSP 2024&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;O &lt;strong&gt;Congresso Internacional de Odontologia de São Paulo (CIOSP)&lt;/strong&gt;, organizado pela Associação Paulista de Cirurgiões-Dentistas (APCD), é um dos maiores congressos de Odontologia do mundo! Com o compromisso de trazer as últimas tendências e avanços do mercado odontológico de maneira criativa, produtiva e inovadora, o CIOSP visa proporcionar a todos os participantes uma experiência enriquecedora que ajude a impulsionar suas carreiras e aprimorar seus conhecimentos. O evento será realizado de &lt;strong&gt;24 a 27 de janeiro de 2024&lt;/strong&gt;, no Expo Center Norte, em São Paulo, um local com uma infraestrutura excepcional para acomodar profissionais e empresas do setor odontológico de todo o mundo.&lt;/p&gt;</description>
+      <guid>./landing/ciosp2024/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;./images/landing/banner-41ciosp-landing-page.jpg&#34; alt=&#34;Brindes para CIOSP 2024&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;O &lt;strong&gt;Congresso Internacional de Odontologia de São Paulo (CIOSP)&lt;/strong&gt;, organizado pela Associação Paulista de Cirurgiões-Dentistas (APCD), é um dos maiores congressos de Odontologia do mundo! Com o compromisso de trazer as últimas tendências e avanços do mercado odontológico de maneira criativa, produtiva e inovadora, o CIOSP visa proporcionar a todos os participantes uma experiência enriquecedora que ajude a impulsionar suas carreiras e aprimorar seus conhecimentos. O evento será realizado de &lt;strong&gt;24 a 27 de janeiro de 2024&lt;/strong&gt;, no Expo Center Norte, em São Paulo, um local com uma infraestrutura excepcional para acomodar profissionais e empresas do setor odontológico de todo o mundo.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
