@@ -1,4 +1,4 @@
-#baseURL       = "localhost"
+baseURL       = "/"
 languageCode  = "pt-br"
 title         = "Via Arto - Brindes Personalizados | Brindes Corporativos | Produtos Personalizados"
 theme         = "viaarto"
@@ -14,7 +14,7 @@ resizeImages = "true"
 enableEmoji = "true"
 enableGitInfo = "false"
 canonifyURLs = "true"
-relativeURLs = "true"
+relativeURLs = "false"
 
 [blackfriday]
 hrefTargetBlank = true
