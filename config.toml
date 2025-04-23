@@ -1,0 +1,165 @@
+baseURL       = "localhost"
+languageCode  = "pt-br"
+title         = "Via Arto - Brindes Personalizados | Brindes Corporativos | Produtos Personalizados"
+theme         = "viaarto"
+summarylength = 25
+
+# Meus Parametros
+publishDir    = "docs"
+enableRobotsTXT = true
+author = "Via Arto"
+description = "Via Arto - Brindes Personalizados | Brindes Corporativos | Produtos Personalizados"
+keywords = "brindes personalizados, produtos corporativos customizados, presentes empresariais exclusivos, merchandising personalizado, itens promocionais para empresas, brindes de qualidade para negócios, soluções criativas em brindes, produtos para eventos corporativos, presentes corporativos sustentáveis, Via Arto brindes"
+resizeImages = "true"
+enableEmoji = "true"
+enableGitInfo = "false"
+canonifyURLs = "true"
+relativeURLs = "true"
+
+[blackfriday]
+hrefTargetBlank = true
+
+
+# Site Menus
+[menu]
+  # Navbar Menus
+  [[menu.nav]]
+    name    = "Home"
+    url     = ""
+    weight  = 1
+  [[menu.nav]]
+    name    = "Quem é a Via Arto"
+    url     = "about"
+    weight  = 2
+  [[menu.nav]]
+    name    = "Nossos Produtos & Serviços"
+    url     = "portfolio"
+    weight  = 3
+  [[menu.nav]]
+    name    = "Catálogo de Produtos"
+    url     = "catalogo"
+    weight  = 4
+   [[menu.nav]]
+    name    = "Entre em contato"
+    url     = "contact"
+    weight  = 5
+
+
+
+# Site Params
+[params]
+  logo = "images/logo-viaarto-redondo-transparente.png"
+  logo_footer = "images/logo-viaarto-horizontal-small.png"
+  favicon_icon = "images/favicon.ico"
+  favicon_shortcut_icon = "images/favicon.png"
+  custom_stylesheets = []   # [ "scss/my_1.scss", "scss/my_2.scss" ]
+  dateFormat = "26 FEB 1994"
+  # Meta data
+  #description = "Via Arto produtos personalizados e brindes corporativos"
+  # Google Analitycs
+  googleAnalitycsID = "G-KDCT2Y1R4E"
+  # We're using formspree.io for form handling, paste your formspree url below
+  #fabform  = "https://fabform.io/f/USAg2Jl"
+
+  # Contact Form
+  #[params.contactForm]
+  #  placeholder_first_name        = "First Name"
+  #  placeholder_last_name         = "Last Name"
+  #  placeholder_email             = "Email"
+  #  placeholder_project_type      = "Project Type"
+  #  placeholder_about_the_project = "About the Project"
+  #  send_message                  = "Send Message"
+
+  #  [[params.contactForm.projectType]]
+  #    value = "gd"
+  #    title  = "Graphics Design"
+  #  [[params.contactForm.projectType]]
+  #    value = "wd"
+  #    title  = "Web Design"
+  
+  # Navbar Action Button
+  [params.navAction]
+    status  = false
+    name    = "Get in touch"
+    url     = "contact"
+  
+
+  # Banner Section
+  [params.banner]
+    enable                = true
+    background_image      = "images/backgrounds/hero-background.jpg"
+    heading               = "Soluções Criativas em Brindes Corporativos e Produtos Personalizados para sua Marca."
+    tagline               = "VIA ARTO"
+    primary_button        = "Conheça Nossos Projetos"
+    primary_button_url    = "portfolio"
+    secondary_button      = "Solicite um Orçamento"
+    secondary_button_url  = "contact"
+
+  [params.blog]
+    read_more             = "saiba mais..."
+
+  [params.portfolio]
+    enable    = true # // esconde o portfolio da home
+    title     = "Nosso Portfolio de Produtos e Serviços"
+    subtitle  = ""
+    view_project = "abrir"
+    more_works = "MORE WORKS"
+    scroll_down = "role para baixo"
+
+  [params.call_to_action]
+    enable              = true
+    background_image    = ""
+    title               = "Impulsione seus Resultados com Brindes Personalizados. Vamos Trabalhar Juntos?"
+    primary_button      = "Converse com um Especialista"
+    primary_button_url  = "contact"
+    secondary_button    = "Conheça Nossos Projetos"
+    secondary_button_url = "portfolio"
+
+  [params.footer]
+    params.footer.qr_print = true
+    # Footer Contact Info
+    [params.footer.contactInfo]
+      title   = "Informação de Contato"
+      address = "Av. Papa Pio XII, 471 - Macedo - Guarulhos - SP - 07113-000 "
+      phone   = "+55 11 91239-4099"
+      email   = "contato@viaarto.com.br"
+      # Footer Sitemap
+      [params.footer.sitemap]
+        title   = "Navegue Pelo Site"
+        [[params.footer.sitemap.link]]
+          name = "Sobre a VIA ARTO"
+          url  = "about"
+        [[params.footer.sitemap.link]]
+          name = "Projetos, Produtos e Serviços"
+          url  = "portfolio"
+        [[params.footer.sitemap.link]]
+          name = "Contato"
+          url  = "contact"
+      # Footer Social Media
+      [params.footer.social]
+        title   = "Nossas Redes Sociais"
+        [[params.footer.social.link]]
+          name = "WhatsApp"
+          url  = "https://wa.me/5511912394099"
+        [[params.footer.social.link]]
+          name = "Instagram"
+          url  = "https://instagram.com/viaartobr"
+        [[params.footer.social.link]]
+          name = "Facebook"
+          url  = "https://www.facebook.com/viaartobr"
+        [[params.footer.social.link]]
+          name = "Linkedin"
+          url  = "https://www.linkedin.com/company/viaarto/"
+        [[params.footer.social.link]]
+          name = "Google"
+          url  = "https://g.co/kgs/VBvQP7"        
+      # Footer Service
+      [params.footer.service]
+        title       = "Nós ajudamos empresas..."
+        description = "oferecendo soluções completas em brindes promocionais personalizados e memoráveis que fortalecem sua marca em eventos, engajam colaboradores e fidelizam clientes."
+      [params.footer.back_to_top]
+        description = "Subir"
+
+
+        # Produtos promocionais personalizados que as pessoas realmente desejam manter.
+        # Ajudamos empresas a criar produtos promocionais personalizados que destacam sua marca. Produtos com logotipo personalizado, mercadorias promocionais em massa, brindes e itens que sabemos que você vai adorar.

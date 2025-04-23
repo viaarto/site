@@ -1,0 +1,90 @@
+{{ define "main" }}
+<section class="site-contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5">
+        <h1 class="site-contact-title">
+          {{ .Params.heading | safeHTML }}
+        </h1>
+        <br>
+       <br>
+       <h4>
+  <a href="mailto:{{ .Params.email | safeHTML }}" target="_blank" rel="noopener">
+    <i class="fa fa-envelope"></i> {{ .Params.email }}
+  </a>
+</h4>
+       <h4>
+  <a href="https://wa.me/{{ .Params.whatsapp | safeHTML }}" target="_blank" rel="noopener">
+    <i class="fab fa-whatsapp"></i> 11 91239-4099
+  </a>
+</h4>
+      </div>
+      <div class="col-lg-6 ml-auto">
+        <div class="site-contact-form">
+          <h4>Envie sua Mensagem via WhatsApp</h4>
+          <form id="whatsapp-form">
+            <div class="row">
+              <div class="col-lg-12">
+                <input type="text" class="form-control" name="name" id="name" placeholder="Nome" required>
+              </div>
+              <div class="col-lg-12">
+                <input type="text" class="form-control" name="company" id="company" placeholder="Empresa" required>
+              </div>
+              <div class="col-lg-12">
+                <input type="tel" class="form-control" name="phone" id="phone" placeholder="Telefone" required>
+              </div>
+              <div class="col-lg-12">
+                <textarea class="form-control" id="message" name="message" rows="6" placeholder="Mensagem" required></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary" id="whatsapp-button">
+                  <span class="btn-area">
+                    <span data-text="Enviar via WhatsApp">
+                      Enviar via WhatsApp
+                    </span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const whatsappForm = document.getElementById('whatsapp-form');
+    whatsappForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      const name = document.getElementById('name').value;
+      const company = document.getElementById('company').value;
+      const phone = document.getElementById('phone').value;
+      const message = document.getElementById('message').value;
+
+      // Encode the text for URL
+      const encodedName = encodeURIComponent(name);
+      const encodedCompany = encodeURIComponent(company);
+      const encodedPhone = encodeURIComponent(phone);
+      const encodedMessage = encodeURIComponent(message);
+
+      // Construct the WhatsApp message
+      const whatsappNumber = "5511912394099";
+      const date = new Date();
+      const formattedDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}-${String(date.getHours()).padStart(2, '0')}-${String(date.getMinutes()).padStart(2, '0')}`;
+      const whatsappMessage = `ORIGEM: Site%0ANome: ${encodedName}%0AEmpresa: ${encodedCompany}%0ATelefone: ${encodedPhone}%0AMensagem: ${encodedMessage}%0AData de Envio: ${formattedDate}`;
+      const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+      window.open(whatsappLink, '_blank'); // Open in new tab
+
+      // Clear the form fields
+      document.getElementById('name').value = "";
+      document.getElementById('company').value = "";
+      document.getElementById('phone').value = "";
+      document.getElementById('message').value = "";
+    });
+  });
+</script>
+{{ end }}

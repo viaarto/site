@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-br"><head>
+  <meta charset="utf-8" />
+  <title>Entre em contato com a Via Arto</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  
+  <meta name="generator" content="Hugo 0.146.5">
+
+  <!-- Bootstrap -->
+  
+  <link rel="stylesheet" href="localhost/css/bootstrap.min.css" />
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Themify Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/themfisher/themify-icons@1.0.0-alpha.3/css/themify-icons.css">
+  <!-- Main Stylesheets -->
+  
+  
+  <link href="localhost/scss/style.min.css" rel="stylesheet" />
+
+  
+
+  
+  <link rel="shortcut icon" href="localhost/images/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="localhost/images/favicon.ico" type="image/x-icon" />
+</head>
+<body><nav class="navbar navbar-expand-lg site-navigation">
+  <div class="container">
+    <a class="navbar-brand" href="localhost/">
+      <img src="localhost/images/logo-viaarto-redondo-transparente.png" alt="logo" />
+    </a>
+    <button
+      class="navbar-toggler collapsed"
+      type="button"
+      data-toggle="collapse"
+      data-target="#sitenavbar"
+    >
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="sitenavbar">
+      <ul class="navbar-nav ml-auto main-nav">
+         
+         
+         
+          
+          <li class="nav-item">
+            <a class="nav-link" href="localhost/"
+              >Home</a
+            >
+          </li>
+           
+         
+          
+          <li class="nav-item">
+            <a class="nav-link" href="localhost/about"
+              >Quem é a Via Arto</a
+            >
+          </li>
+           
+         
+          
+          <li class="nav-item">
+            <a class="nav-link" href="localhost/portfolio"
+              >Nossos Produtos &amp; Serviços</a
+            >
+          </li>
+           
+         
+          
+          <li class="nav-item">
+            <a class="nav-link" href="localhost/catalogo"
+              >Catálogo de Produtos</a
+            >
+          </li>
+           
+         
+          
+          <li class="nav-item">
+            <a
+              class="nav-link btn btn-sm btn-primary btn-sm-rounded"
+              href="localhost/contact"
+            >
+              <span class="btn-area">
+                <span data-text="Entre em contato">
+                  Entre em contato
+                </span>
+              </span>
+            </a>
+          </li>
+           
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+<main>
+<section class="site-contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5">
+        <h1 class="site-contact-title">
+          Fale com a <span>Via Arto</span> agora e encontre a solução ideal de <span>brindes personalizados</span> para sua empresa!
+        </h1>
+        <br>
+       <br>
+       <h4>
+  <a href="mailto:contato@viaarto.com.br" target="_blank" rel="noopener">
+    <i class="fa fa-envelope"></i> contato@viaarto.com.br
+  </a>
+</h4>
+       <h4>
+  <a href="https://wa.me/&#43;5511912394099" target="_blank" rel="noopener">
+    <i class="fab fa-whatsapp"></i> 11 91239-4099
+  </a>
+</h4>
+      </div>
+      <div class="col-lg-6 ml-auto">
+        <div class="site-contact-form">
+          <h4>Envie sua Mensagem via WhatsApp</h4>
+          <form id="whatsapp-form">
+            <div class="row">
+              <div class="col-lg-12">
+                <input type="text" class="form-control" name="name" id="name" placeholder="Nome" required>
+              </div>
+              <div class="col-lg-12">
+                <input type="text" class="form-control" name="company" id="company" placeholder="Empresa" required>
+              </div>
+              <div class="col-lg-12">
+                <input type="tel" class="form-control" name="phone" id="phone" placeholder="Telefone" required>
+              </div>
+              <div class="col-lg-12">
+                <textarea class="form-control" id="message" name="message" rows="6" placeholder="Mensagem" required></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary" id="whatsapp-button">
+                  <span class="btn-area">
+                    <span data-text="Enviar via WhatsApp">
+                      Enviar via WhatsApp
+                    </span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const whatsappForm = document.getElementById('whatsapp-form');
+    whatsappForm.addEventListener('submit', function(event) {
+      event.preventDefault(); 
+
+      const name = document.getElementById('name').value;
+      const company = document.getElementById('company').value;
+      const phone = document.getElementById('phone').value;
+      const message = document.getElementById('message').value;
+
+      
+      const encodedName = encodeURIComponent(name);
+      const encodedCompany = encodeURIComponent(company);
+      const encodedPhone = encodeURIComponent(phone);
+      const encodedMessage = encodeURIComponent(message);
+
+      
+      const whatsappNumber = "5511912394099";
+      const date = new Date();
+      const formattedDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}-${String(date.getHours()).padStart(2, '0')}-${String(date.getMinutes()).padStart(2, '0')}`;
+      const whatsappMessage = `ORIGEM: Site%0ANome: ${encodedName}%0AEmpresa: ${encodedCompany}%0ATelefone: ${encodedPhone}%0AMensagem: ${encodedMessage}%0AData de Envio: ${formattedDate}`;
+      const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+      window.open(whatsappLink, '_blank'); 
+
+      
+      document.getElementById('name').value = "";
+      document.getElementById('company').value = "";
+      document.getElementById('phone').value = "";
+      document.getElementById('message').value = "";
+    });
+  });
+</script>
+
+        </main><footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="site-footer-logo"><a href="localhost/"><img src="localhost/images/logo-viaarto-horizontal-small.png" alt="logo-footer"></a></div>
+      </div>
+      
+      <div class="col-lg-3 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">Informação de Contato</h5>
+          <p class="site-footer-widget-description">
+	    
+              Av. Papa Pio XII, 471 - Macedo - Guarulhos - SP - 07113-000 
+	      <br>
+	    
+	    
+              <a href="tel:&#43;55%2011%2091239-4099">&#43;55 11 91239-4099</a>
+              <br>
+	    
+	    
+              <a href="mailto:contato@viaarto.com.br">contato@viaarto.com.br</a>
+	    
+          </p>
+        </div>
+      </div>
+      
+      
+      <div class="col-lg-2 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">Navegue Pelo Site</h5>
+          <ul class="site-footer-widget-links">
+            
+            <li><a href="localhost/about">Sobre a VIA ARTO</a></li>
+            
+            <li><a href="localhost/portfolio">Projetos, Produtos e Serviços</a></li>
+            
+            <li><a href="localhost/contact">Contato</a></li>
+            
+          </ul>
+        </div>
+      </div>
+      
+      
+      <div class="col-lg-2 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">Nossas Redes Sociais</h5>
+          <ul class="site-footer-widget-links">
+            
+              <li><a href="https://wa.me/5511912394099">WhatsApp</a></li>
+            
+              <li><a href="https://instagram.com/viaartobr">Instagram</a></li>
+            
+              <li><a href="https://www.facebook.com/viaartobr">Facebook</a></li>
+            
+              <li><a href="https://www.linkedin.com/company/viaarto/">Linkedin</a></li>
+            
+              <li><a href="https://g.co/kgs/VBvQP7">Google</a></li>
+            
+          </ul>
+        </div>
+      </div>
+      
+      
+      <div class="col-lg-3 col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">Nós ajudamos empresas...</h5>
+          <p class="site-footer-widget-description">
+            oferecendo soluções completas em brindes promocionais personalizados e memoráveis que fortalecem sua marca em eventos, engajam colaboradores e fidelizam clientes.
+          </p>
+        </div>
+      </div>
+      
+      <div class="col-lg-2 col-12">
+        <a href="#top" class="site-footer-widget-top">
+          <img src="localhost/images/to-top.svg" alt="back-to-top">
+          <p>
+	    Subir
+          </p>
+        </a>
+      </div>
+      <div class="col-12">
+        <div class="site-footer-copyright">
+          <p>© Copyright 2025 - VIA ARTO - Brindes e Produtos Personalizados.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</footer>
+
+
+
+<script src="localhost/js/vendor.min.js"></script>
+
+<script src="localhost/js/script.min.js"></script>
+</body>
+</html>

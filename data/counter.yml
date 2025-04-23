@@ -1,0 +1,14 @@
+enable : true
+heading : "Entregamos Sucesso em Cada Brinde:"
+counter_item: 
+  - title: "Brindes entregues"
+    number: "5000"
+
+  - title: "Projetos finalizados com sucesso"
+    number: "200"
+
+  - title: "Produtos criativos em nosso catálogo"
+    number: "3500"
+
+  - title: "Empresas impulsionadas por nossos brindes"
+    number: "100"

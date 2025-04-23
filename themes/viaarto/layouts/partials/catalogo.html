@@ -1,0 +1,26 @@
+{{ with .Site.Data.catalogo}}
+  {{ if .enable }}
+<section class="site-catalogo-download">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+<div class="section-title">
+            <h2>
+              {{ .title }}
+            </h2>
+          </div>
+        </div>
+        <p class="catalogo-description">Temos um catalogo com mais de 3000 produtos, com as melhores marcas do mercado, para atender a sua necessidade.</p>
+        <div class="catalogo-button-wrapper mx-auto" style="text-align: center; display: flex; justify-content: center;">
+          <a href="{{ .catalogo_link }}" class="btn btn-primary" target="_blank">Fazer Download</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+{{ end }}
+<style>
+  .catalogo-description {
+    font-size: 1.5rem;
+  }
+</style>
