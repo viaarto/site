@@ -1,6 +1,6 @@
 ---
 title: "Peças customizadas em Acrílico"
-date: 2025-04-01
+date: 2026-04-01
 type: portfolio
 image: "images/viaarto/projetos-customizados.png"
 category: ["Peças customizadas em Acrílico"]
