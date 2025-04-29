@@ -10,12 +10,18 @@
             </h2>
           </div>
         </div>
-        <p class="catalogo-description">Temos um catalogo com mais de 3000 produtos, com as melhores marcas do mercado, para atender a sua necessidade.</p>
-        <div class="catalogo-button-wrapper mx-auto" style="text-align: center; display: flex; justify-content: center;">
-          <a href="{{ .catalogo_link }}" class="btn btn-primary" target="_blank">Fazer Download</a>
-        </div>
+        <div class="col-12 text-center"> <!-- Adicionado para agrupar e centralizar -->
+          <p class="catalogo-description">Temos um catalogo com mais de 3000 produtos, com as melhores marcas do mercado, para atender a sua necessidade.</p>
+          <a href="{{ .catalogo_link }}" target="_blank"> <!-- Adicionado link na imagem -->
+            <img src="{{ .catalogo_image }}" alt="Catálogo Via Arto" class="img-fluid" style="max-width: 100%; height: auto; margin-bottom: 20px;">
+          </a> <!-- Fim do link da imagem -->
+          <div class="catalogo-button-wrapper mx-auto" style="text-align: center; display: flex; justify-content: center;">
+            <a href="{{ .catalogo_link }}" class="btn btn-primary" target="_blank">Fazer Download</a>
+          </div>
+        </div> <!-- Fim do col-12 -->
       </div>
     </div>
+    
   </section>
   {{ end }}
 {{ end }}

@@ -1,0 +1,69 @@
+{{ "<!-- Schema.org structured data -->" | safeHTML }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ .Site.Title }}",
+  "url": "{{ .Site.BaseURL }}",
+  "logo": "{{ "images/logo-viaarto-horizontal.png" | absURL }}",
+  "description": "{{ .Site.Params.description }}",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{ index (split .Site.Params.footer.contactInfo.address " - ") 0 }}",
+    "addressLocality": "{{ index (split .Site.Params.footer.contactInfo.address " - ") 1 }}",
+    "addressRegion": "{{ index (split .Site.Params.footer.contactInfo.address " - ") 2 }}",
+    "postalCode": "{{ index (split .Site.Params.footer.contactInfo.address " - ") 4 }}",
+    "addressCountry": "BR"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "{{ .Site.Params.footer.contactInfo.phone }}",
+    "contactType": "customer service",
+    "email": "{{ .Site.Params.footer.contactInfo.email }}"
+  },
+  "sameAs": [
+    {{ range $index, $element := .Site.Params.footer.social.link }}
+    {{ if $index }}, {{ end }}"{{ $element.url }}"
+    {{ end }}
+  ]
+}
+</script>
+
+{{ if .IsPage }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "headline": "{{ .Title }}",
+  "url": "{{ .Permalink }}",
+  "description": "{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
+  },
+  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05-07:00" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" }}"
+}
+</script>
+{{ end }}
+
+{{ if eq .Section "portfolio" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ .Title }}",
+  "description": "{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}",
+  "url": "{{ .Permalink }}",
+  "brand": {
+    "@type": "Brand",
+    "name": "Via Arto"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "BRL",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+{{ end }}

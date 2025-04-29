@@ -1,6 +1,6 @@
 ---
 title: "Projetos Especiais de Brindes Customizados"
-date: 2026-01-04
+date: 2025-01-04
 type: portfolio
 image: "images/viaarto/projetos-customizados.png"
 category: ["Crie brindes únicos que representam a sua identidade."]

@@ -5,10 +5,56 @@
   {{ "<!-- mobile responsive meta -->" | safeHTML }}
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  
+  {{ "<!-- SEO meta tags -->" | safeHTML }}
   {{ with .Site.Params.author }}
   <meta name="author" content="{{ . }}">
   {{ end }}
+  {{ with .Site.Params.description }}
+  <meta name="description" content="{{ . }}">
+  {{ end }}
+  {{ with .Site.Params.keywords }}
+  <meta name="keywords" content="{{ . }}">
+  {{ end }}
   {{ hugo.Generator }}
+  
+  {{ "<!-- Open Graph / Facebook -->" | safeHTML }}
+  <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+  <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
+  {{ $ogImage := "" }}
+  {{ if .Params.image }}
+    {{ $ogImage = (printf "%s%s" .Site.BaseURL .Params.image) }}
+  {{ else if .Site.Params.banner.background_image }}
+    {{ $ogImage = (printf "%s%s" .Site.BaseURL .Site.Params.banner.background_image) }}
+  {{ else }}
+    {{ $ogImage = (printf "%simages/hero/hero_viaarto_corp-01.jpg" .Site.BaseURL) }}
+  {{ end }}
+  <meta property="og:image" content="{{ $ogImage }}">
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+  <meta property="og:locale" content="{{ .Site.LanguageCode }}">
+  
+  {{ "<!-- Twitter -->" | safeHTML }}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="{{ .Permalink }}">
+  <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+  <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
+  <meta name="twitter:image" content="{{ $ogImage }}">
+  
+  {{ "<!-- LinkedIn -->" | safeHTML }}
+  <meta property="linkedin:card" content="summary_large_image">
+  
+  {{ "<!-- WhatsApp Preview (uses Open Graph) -->" | safeHTML }}
+  
+  {{ "<!-- Pinterest -->" | safeHTML }}
+  <meta name="pinterest-rich-pin" content="true">
+  
+  {{ "<!-- Canonical URL -->" | safeHTML }}
+  <link rel="canonical" href="{{ .Permalink }}">
+  
+  {{ "<!-- Schema.org structured data -->" | safeHTML }}
+  {{ partial "schema.html" . }}
 
   {{ "<!-- Bootstrap -->" | safeHTML }}
   {{ $bootstrap := resources.Get "css/bootstrap.css" | minify }}
@@ -31,4 +77,7 @@
   <!--Favicon-->
   <link rel="shortcut icon" href="{{ .Site.Params.favicon_shortcut_icon | absURL }}" type="image/x-icon" />
   <link rel="icon" href="{{ .Site.Params.favicon_icon | absURL }}" type="image/x-icon" />
+  
+  {{ "<!-- Apple Touch Icons -->" | safeHTML }}
+  <link rel="apple-touch-icon" href="{{ "images/apple-touch-icon.png" | absURL }}">
 </head>
