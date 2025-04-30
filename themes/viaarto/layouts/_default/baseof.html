@@ -2,6 +2,10 @@
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
     {{- partial "head.html" . -}}
     <body>
+        {{ "<!-- Google Tag Manager (noscript) -->" | safeHTML }}
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKNS8Z5M"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        {{ "<!-- End Google Tag Manager (noscript) -->" | safeHTML }}
         {{- partial "header.html" . -}}
         <main>
             {{- block "main" . }}{{- end }}
