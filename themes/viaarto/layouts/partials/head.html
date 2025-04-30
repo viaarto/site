@@ -59,21 +59,38 @@
   
   {{ "<!-- Canonical URL -->" | safeHTML }}
   <link rel="canonical" href="{{ .Permalink }}">
+
+  {{ "<!-- Preload Hero Background Image -->" | safeHTML }}
+  {{ with .Site.Params.banner.background_image }}
+  <link rel="preload" href="{{ . | absURL }}" as="image">
+  {{ end }}
+
+  {{ "<!-- Preconnect and Preload Google Fonts -->" | safeHTML }}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700|Montserrat:300,400,500,600,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700|Montserrat:300,400,500,600,700&display=swap"></noscript>
   
   {{ "<!-- Schema.org structured data -->" | safeHTML }}
   {{ partial "schema.html" . }}
 
-  {{ "<!-- Bootstrap -->" | safeHTML }}
+  {{ "<!-- Bootstrap (Async) -->" | safeHTML }}
   {{ $bootstrap := resources.Get "css/bootstrap.css" | minify }}
-  <link rel="stylesheet" href="{{ $bootstrap.Permalink }}" />
-  {{ "<!-- font-awesome -->" | safeHTML }}
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  {{ "<!-- Themify Icons -->" | safeHTML }}
+  <link rel="preload" href="{{ $bootstrap.Permalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ $bootstrap.Permalink }}"></noscript>
+  
+  {{ "<!-- Font Awesome (Async) -->" | safeHTML }}
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"></noscript>
+  
+  {{ "<!-- Themify Icons (Remains synchronous as it might be small/critical) -->" | safeHTML }}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/themfisher/themify-icons@1.0.0-alpha.3/css/themify-icons.css">
-  {{ "<!-- Main Stylesheets -->" | safeHTML }}
+
+  {{ "<!-- Main Stylesheet (Async) -->" | safeHTML }}
   {{ $sass := resources.Get "scss/style.scss" | css.Sass }}
   {{ $style := $sass | minify }}
-  <link href="{{ $style.Permalink }}" rel="stylesheet" />
+  <link rel="preload" href="{{ $style.Permalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ $style.Permalink }}"></noscript>
 
   {{ range .Site.Params.custom_stylesheets -}}
     {{ $sass := resources.Get . | css.Sass }}

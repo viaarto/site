@@ -62,6 +62,17 @@ Na Via Arto, a singularidade é o caminho para o destaque. Nossos projetos custo
   
   <!-- Canonical URL -->
   <link rel="canonical" href="https://viaarto.com.br/portfolio/projetos-customizados/">
+
+  <!-- Preload Hero Background Image -->
+  
+  <link rel="preload" href="https://viaarto.com.br/images/backgrounds/hero-background.webp" as="image">
+  
+
+  <!-- Preconnect and Preload Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700|Montserrat:300,400,500,600,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700|Montserrat:300,400,500,600,700&display=swap"></noscript>
   
   <!-- Schema.org structured data -->
   <!-- Schema.org structured data -->
@@ -143,17 +154,23 @@ Na Via Arto, a singularidade é o caminho para o destaque. Nossos projetos custo
 
 
 
-  <!-- Bootstrap -->
+  <!-- Bootstrap (Async) -->
   
-  <link rel="stylesheet" href="https://viaarto.com.br/css/bootstrap.min.css" />
-  <!-- font-awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- Themify Icons -->
+  <link rel="preload" href="https://viaarto.com.br/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://viaarto.com.br/css/bootstrap.min.css"></noscript>
+  
+  <!-- Font Awesome (Async) -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"></noscript>
+  
+  <!-- Themify Icons (Remains synchronous as it might be small/critical) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/themfisher/themify-icons@1.0.0-alpha.3/css/themify-icons.css">
-  <!-- Main Stylesheets -->
+
+  <!-- Main Stylesheet (Async) -->
   
   
-  <link href="https://viaarto.com.br/scss/style.min.css" rel="stylesheet" />
+  <link rel="preload" href="https://viaarto.com.br/scss/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://viaarto.com.br/scss/style.min.css"></noscript>
 
   
 
@@ -181,7 +198,7 @@ Na Via Arto, a singularidade é o caminho para o destaque. Nossos projetos custo
         <!-- End Google Tag Manager (noscript) --><nav class="navbar navbar-expand-lg site-navigation">
   <div class="container">
     <a class="navbar-brand" href="https://viaarto.com.br/">
-      <img src="https://viaarto.com.br/images/logo-viaarto-redondo-transparente.png" alt="logo" />
+      <img src="https://viaarto.com.br/images/logo-viaarto-redondo-transparente.webp" alt="logo" />
     </a>
     <button
       class="navbar-toggler collapsed"
@@ -397,7 +414,7 @@ Na Via Arto, a singularidade é o caminho para o destaque. Nossos projetos custo
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <div class="site-footer-logo"><a href="https://viaarto.com.br/"><img src="https://viaarto.com.br/images/logo-viaarto-horizontal-small.png" alt="logo-footer"></a></div>
+        <div class="site-footer-logo"><a href="https://viaarto.com.br/"><img src="https://viaarto.com.br/images/logo-viaarto-horizontal-small.webp" alt="logo-footer"></a></div>
       </div>
       
       <div class="col-lg-3 col-md-6">

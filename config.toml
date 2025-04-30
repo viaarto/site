@@ -48,8 +48,8 @@ hrefTargetBlank = true
 
 # Site Params
 [params]
-  logo = "images/logo-viaarto-redondo-transparente.png"
-  logo_footer = "images/logo-viaarto-horizontal-small.png"
+  logo = "images/logo-viaarto-redondo-transparente.webp"
+  logo_footer = "images/logo-viaarto-horizontal-small.webp"
   favicon_icon = "images/favicon.ico"
   favicon_shortcut_icon = "images/favicon.png"
   custom_stylesheets = []   # [ "scss/my_1.scss", "scss/my_2.scss" ]
