@@ -54,12 +54,12 @@ hrefTargetBlank = true
   favicon_shortcut_icon = "images/favicon.png"
   custom_stylesheets = []   # [ "scss/my_1.scss", "scss/my_2.scss" ]
   dateFormat = "26 FEB 1994"
-  # Meta data
-  #description = "Via Arto produtos personalizados e brindes corporativos"
-  # Google Analitycs
-  googleAnalitycsID = "G-KDCT2Y1R4E"
-  # We're using formspree.io for form handling, paste your formspree url below
-  #fabform  = "https://fabform.io/f/USAg2Jl"
+  description = "Via Arto - Brindes Personalizados | Brindes Corporativos | Produtos Personalizados"
+  keywords = "brindes personalizados, produtos corporativos customizados, presentes empresariais exclusivos, merchandising personalizado, itens promocionais para empresas, brindes de qualidade para negócios, soluções criativas em brindes, produtos para eventos corporativos, presentes corporativos sustentáveis, Via Arto brindes"
+  # Google Analitycs -- criado em 29-04-2025
+  googleAnalitycsID = "G-SYW38Z8C75"
+  
+
 
   # Contact Form
   #[params.contactForm]
