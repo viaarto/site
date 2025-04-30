@@ -2,7 +2,7 @@
 title: "Projetos Especiais de Brindes Customizados"
 date: 2025-01-04
 type: portfolio
-image: "images/viaarto/projetos-customizados.png"
+image: "images/viaarto/projetos-customizados.webp"
 category: ["Crie brindes únicos que representam a sua identidade."]
 weight: 40
 # project_images: ["images/projects/project-details-image-one.jpg", "images/projects/project-details-image-two.jpg"]

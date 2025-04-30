@@ -2,7 +2,7 @@
 title: "Brindes Promocionais para Feiras & Eventos Corporativos"
 date: 2025-01-01
 type: portfolio
-image: "images/viaarto/brindes-corporativos-para-feiras-e-eventos.png"
+image: "images/viaarto/brindes-corporativos-para-feiras-e-eventos.webp"
 category: ["Destaque sua marca em cada interação"]
 weight: 10
 # project_images: ["images/viaarto/post-image-01.png", "images/viaarto/post-image-02.png"]

@@ -87,7 +87,7 @@ hrefTargetBlank = true
   # Banner Section
   [params.banner]
     enable                = true
-    background_image      = "images/backgrounds/hero-background.jpg"
+    background_image      = "images/backgrounds/hero-background.webp"
     heading               = "Soluções Criativas em Brindes Corporativos e Produtos Personalizados para sua Marca."
     tagline               = "VIA ARTO"
     primary_button        = "Conheça Nossos Projetos"

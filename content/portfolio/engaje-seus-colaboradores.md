@@ -2,7 +2,7 @@
 title: "Brindes Personalizados para Engajamento de Colaboradores"
 date: 2025-01-02
 type: portfolio
-image: "images/viaarto/welcome-kit-para-funcionarios.png"
+image: "images/viaarto/welcome-kit-para-funcionarios.webp"
 category: ["Fortaleça o espírito de equipe e a cultura da sua empresa"]
 weight: 20
 # project_images: ["images/projects/welcome-kit-para-funcionarios.jpeg", "images/projects/welcome-kit-para-funcionarios.jpeg"]

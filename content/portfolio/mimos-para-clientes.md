@@ -2,7 +2,7 @@
 title: "Brindes Premium Personalizados para Clientes VIP e Executivos."
 date: 2025-01-03
 type: portfolio
-image: "images/viaarto/mimos-para-clientes.png"
+image: "images/viaarto/mimos-para-clientes.webp"
 category: ["Demonstre apreço e fidelize seus parceiros e clientes"]
 weight: 30
 # project_images: ["images/projects/project-details-image-one.jpg", "images/projects/project-details-image-two.jpg"]

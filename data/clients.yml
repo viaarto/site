@@ -2,14 +2,14 @@ enable        : true
 title         : "Empresas que Escolheram a Via Arto"
 client_logos  : 
   [
-  "images/clients/cliente-aws-200px.png",
-  "images/clients/cliente-google-cloud-200px.png",
-  "images/clients/cliente-gitlab-200px.png",
-  "images/clients/cliente-casa-do-vidro-curvo-200px.png",
-  "images/clients/cliente-netmove-200px.png",
-  "images/clients/cliente-campari-group-200px.png",
-  "images/clients/cliente-flap-capital-200px.png",
-  "images/clients/cliente-biocare-ambiental-200px.png",
-  "images/clients/cliente-radio-band-news-fm-200px.png",
-  "images/clients/cliente-bartenderia-200px.png"
+  "images/clients/cliente-aws-200px.webp",
+  "images/clients/cliente-google-cloud-200px.webp",
+  "images/clients/cliente-gitlab-200px.webp",
+  "images/clients/cliente-casa-do-vidro-curvo-200px.webp",
+  "images/clients/cliente-netmove-200px.webp",
+  "images/clients/cliente-campari-group-200px.webp",
+  "images/clients/cliente-flap-capital-200px.webp",
+  "images/clients/cliente-biocare-ambiental-200px.webp",
+  "images/clients/cliente-radio-band-news-fm-200px.webp",
+  "images/clients/cliente-bartenderia-200px.webp"
   ]
