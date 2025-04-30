@@ -1,13 +1,14 @@
 <nav class="navbar navbar-expand-lg site-navigation">
   <div class="container">
     <a class="navbar-brand" href="{{ .Site.BaseURL }}">
-      <img src="{{ .Site.Params.logo | absURL }}" alt="logo" />
+      <img src="{{ .Site.Params.logo | absURL }}" alt="logo" width="460" height="460" />
     </a>
     <button
       class="navbar-toggler collapsed"
       type="button"
       data-toggle="collapse"
       data-target="#sitenavbar"
+      aria-label="Abrir/Fechar menu"
     >
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>

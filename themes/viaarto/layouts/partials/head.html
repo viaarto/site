@@ -82,9 +82,6 @@
   {{ "<!-- Font Awesome (Async) -->" | safeHTML }}
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"></noscript>
-  
-  {{ "<!-- Themify Icons (Remains synchronous as it might be small/critical) -->" | safeHTML }}
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/themfisher/themify-icons@1.0.0-alpha.3/css/themify-icons.css">
 
   {{ "<!-- Main Stylesheet (Async) -->" | safeHTML }}
   {{ $sass := resources.Get "scss/style.scss" | css.Sass }}
