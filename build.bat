@@ -1,4 +1,5 @@
 @echo off
+setlocal enabledelayedexpansion
 echo ==================================
 echo Starting Hugo build process...
 echo ==================================
@@ -21,13 +22,15 @@ echo Creating Git commit...
 echo ==================================
 REM Get current date and time in yyyy-mm-dd-hh-mm format
 for /f "tokens=1 delims=." %%a in ('wmic os get LocalDateTime /value') do set dt=%%a
-set datetime_str=%dt:~0,4%-%dt:~4,2%-%dt:~6,2%-%dt:~8,2%-%dt:~10,2%
+echo Debug: Raw dt value is !dt!
+set datetime_str=!dt:~0,4!-!dt:~4,2!-!dt:~6,2!-!dt:~8,2!-!dt:~10,2!
+echo Debug: Formatted datetime_str is !datetime_str!
 
-git commit -m "Auto update: %datetime_str%"
+git commit -m "Auto update: !datetime_str!"
 if %errorlevel% neq 0 (
     echo WARNING: Git commit failed. Maybe no changes to commit?
 ) else (
-    echo Commit created with message: "Auto update: %datetime_str%"
+    echo Commit created with message: "Auto update: !datetime_str!"
 )
 echo.
 echo ==================================
