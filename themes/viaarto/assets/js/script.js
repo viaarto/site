@@ -23,6 +23,32 @@ $(document).ready(function() {
     $('.site-testimonial-item').removeClass('inactive');
     $('.site-testimonial-item').removeClass('active');
   });
+
+  // Initialize Tiny Slider for client logos
+  if (document.querySelector('.client-logo-slider')) {
+    tns({
+      container: '.client-logo-slider',
+      items: 3, // Start with 3 items on smallest screens
+      slideBy: 'page',
+      autoplay: true,
+      autoplayTimeout: 2000, // Increased timeout for slower transition
+      autoplayButtonOutput: false,
+      mouseDrag: true,
+      gutter: 20,
+      nav: false,
+      controls: false,
+      responsive: {
+        768: { // Medium screens
+          items: 5,
+          gutter: 30
+        },
+        992: { // Large screens
+          items: 6,
+          gutter: 40
+        }
+      }
+    });
+  }
 });
 
 $(window).on('scroll', function () {

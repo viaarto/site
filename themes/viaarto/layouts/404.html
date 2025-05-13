@@ -1,0 +1,41 @@
+{{ define "main" }}
+
+<section class="site-contact"> {{/* Using contact section class for similar styling */}}
+  <div class="container">
+    <div class="row">
+      {{/* Left Column - Error Message */}}
+      <div class="col-lg-5">
+        <h1 class="site-contact-title"> {{/* Using contact title class */}}
+          Ops! A página que você procura não existe ou foi removida.
+         </h1>
+         <br>
+         <p class="not-found-text"> {{/* Added class for styling */}}
+           404 - Página não encontrada.
+         </p>
+      </div>
+
+      {{/* Right Column - Helpful Links */}}
+       <div class="col-lg-6 ml-auto">
+         <div class="site-contact-form"> {{/* Using contact form class for structure/padding */}}
+           <h4>O que você gostaria de fazer?</h4>
+           <ul class="list-unstyled mt-4 not-found-links"> {{/* Added class for styling links */}}
+            <li class="mb-3">
+               <a href="{{ "/" | absURL }}">» Home</a>
+            </li>
+             <li class="mb-3">
+               <a href="{{ "/contact" | absURL }}">» Entre em contato</a>
+            </li>
+            <li class="mb-3">
+              <a href="{{ "/portfolio" | absURL }}">» Conheça nossos serviços</a>
+            </li>
+            <li class="mb-3">
+              <a href="{{ "/catalogo" | absURL }}">» Veja nossos produtos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

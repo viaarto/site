@@ -7,11 +7,13 @@
           <div class="section-title">
             <h2>{{ .title }}</h2>
           </div>
-          <div class="site-client-wrapper">
+          {{/* Container for the Tiny Slider */}}
+          <div class="client-logo-slider">
             {{ range .client_logos }}
-            <div class="site-client-item">
-              <img src="{{ . | absURL }}" alt="client-logo">
-            </div>
+              {{/* Each logo is a direct child item for the slider */}}
+              <div> 
+                <img src="{{ . | absURL }}" alt="client-logo"> {{/* Removed inline style */}}
+              </div>
             {{ end }}
           </div>
         </div>

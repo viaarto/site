@@ -1,24 +1,28 @@
 .site-client{
   padding: 100px 0 50px;
-  .section-title{
+  .section-title {
     margin-bottom: 100px;
   }
-  &-wrapper{
-    display: flex;
-    flex-wrap: wrap;
-    @include desktop{
+
+  // Styles for the Tiny Slider container
+  .client-logo-slider {
+    // Ensure items are vertically centered within the slider track
+    .tns-item {
+      display: flex;
+      align-items: center;
       justify-content: center;
+      // The height is implicitly controlled by the tallest logo + slider setup
+      // We might need to adjust min-height if logos vary significantly
+      min-height: 80px; // Adjust as needed based on logo sizes
     }
-  }
-  &-item{
-    text-align: center;
-    width: 20%;
-    margin-bottom: 50px;
-    @include desktop{
-      width: 33.33%;
-    }
-    @include mobile{
-      width: 50%;
+
+    // Style for the images within the slider items
+    img {
+      max-width: 100%; // Ensure logos don't overflow their container
+      max-height: 150px; // Consistent max height for logos - Increased size
+      width: auto; // Maintain aspect ratio
+      height: auto; // Maintain aspect ratio
+      object-fit: contain; // Ensure the whole logo is visible
     }
   }
 }

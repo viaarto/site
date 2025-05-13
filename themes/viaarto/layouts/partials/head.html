@@ -92,6 +92,16 @@
   <link rel="preload" href="{{ $style.Permalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="{{ $style.Permalink }}"></noscript>
 
+  {{ "<!-- Tiny Slider CSS (from assets) -->" | safeHTML }}
+  {{ $tinySliderCSS := resources.Get "css/vendor/tiny-slider.css" }}
+  {{ if $tinySliderCSS }} {{/* Check if resource exists */}}
+    <link rel="preload" href="{{ $tinySliderCSS.Permalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ $tinySliderCSS.Permalink }}"></noscript>
+  {{ else }}
+    {{/* Optional: Log an error during build if file not found */}}
+    {{ errorf "Tiny Slider CSS not found at css/vendor/tiny-slider.css" }}
+  {{ end }}
+
   {{ range .Site.Params.custom_stylesheets -}}
     {{ $sass := resources.Get . | css.Sass }}
     {{ $style := $sass | minify }}
