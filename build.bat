@@ -41,10 +41,10 @@ REM set year=!cur_date:~0,4!
 REM set month=!cur_date:~5,2!
 REM set day=!cur_date:~8,2!
 
-REM --- Using a common format assumption (like pt-BR: DD/MM/YYYY) ---
-set day=!cur_date:~0,2!
-set month=!cur_date:~3,2!
-set year=!cur_date:~6,4!
+REM --- Parsing format "Mon DD/MM/YYYY" ---
+set day=!cur_date:~4,2!
+set month=!cur_date:~7,2!
+set year=!cur_date:~10,4!
 
 REM Extract time parts (HH:MM) - handles potential leading space for single-digit hours
 set hour=!cur_time:~0,2!
