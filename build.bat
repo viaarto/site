@@ -20,10 +20,38 @@ echo Files added to staging.
 echo ==================================
 echo Creating Git commit...
 echo ==================================
-REM Get current date and time in yyyy-mm-dd-hh-mm format
-for /f "tokens=1 delims=." %%a in ('wmic os get LocalDateTime /value') do set dt=%%a
-echo Debug: Raw dt value is !dt!
-set datetime_str=!dt:~0,4!-!dt:~4,2!-!dt:~6,2!-!dt:~8,2!-!dt:~10,2!
+REM Get current date and time using %DATE% and %TIME%
+REM Assumes date format like DD/MM/YYYY or MM/DD/YYYY - adjust substrings if needed
+set cur_date=%DATE%
+set cur_time=%TIME%
+echo Debug: Raw DATE is !cur_date!
+echo Debug: Raw TIME is !cur_time!
+
+REM Extract date parts (adjust indices based on your system's format)
+REM Example for DD/MM/YYYY:
+REM set day=!cur_date:~0,2!
+REM set month=!cur_date:~3,2!
+REM set year=!cur_date:~6,4!
+REM Example for MM/DD/YYYY:
+REM set month=!cur_date:~0,2!
+REM set day=!cur_date:~3,2!
+REM set year=!cur_date:~6,4!
+REM Example for YYYY-MM-DD (less common for %DATE%):
+REM set year=!cur_date:~0,4!
+REM set month=!cur_date:~5,2!
+REM set day=!cur_date:~8,2!
+
+REM --- Using a common format assumption (like pt-BR: DD/MM/YYYY) ---
+set day=!cur_date:~0,2!
+set month=!cur_date:~3,2!
+set year=!cur_date:~6,4!
+
+REM Extract time parts (HH:MM) - handles potential leading space for single-digit hours
+set hour=!cur_time:~0,2!
+if "!hour:~0,1!"==" " set hour=0!hour:~1,1!
+set minute=!cur_time:~3,2!
+
+set datetime_str=!year!-!month!-!day!-!hour!-!minute!
 echo Debug: Formatted datetime_str is !datetime_str!
 
 git commit -m "Auto update: !datetime_str!"
