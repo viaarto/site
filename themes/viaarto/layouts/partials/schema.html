@@ -1,4 +1,25 @@
 {{ "<!-- Schema.org structured data -->" | safeHTML }}
+{{ $rawAddress := .Site.Params.footer.contactInfo.address }}
+{{ $streetAddress := "" }}
+{{ $locality := "" }}
+{{ $region := "" }}
+{{ $postalCode := "" }}
+{{ $dashParts := split $rawAddress " - " }}
+{{ if ge (len $dashParts) 5 }}
+  {{ $streetAddress = index $dashParts 0 }}
+  {{ $locality = index $dashParts 1 }}
+  {{ $region = index $dashParts 2 }}
+  {{ $postalCode = index $dashParts 4 }}
+{{ else }}
+  {{ $commaParts := split $rawAddress ", " }}
+  {{ if ge (len $commaParts) 2 }}
+    {{ $locality = index $commaParts 0 }}
+    {{ $region = index $commaParts 1 }}
+  {{ else }}
+    {{ $locality = $rawAddress }}
+    {{ $region = "SP" }}
+  {{ end }}
+{{ end }}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -9,10 +30,10 @@
   "description": "{{ .Site.Params.description }}",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "{{ index (split .Site.Params.footer.contactInfo.address " - ") 0 }}",
-    "addressLocality": "{{ index (split .Site.Params.footer.contactInfo.address " - ") 1 }}",
-    "addressRegion": "{{ index (split .Site.Params.footer.contactInfo.address " - ") 2 }}",
-    "postalCode": "{{ index (split .Site.Params.footer.contactInfo.address " - ") 4 }}",
+    "streetAddress": "{{ $streetAddress }}",
+    "addressLocality": "{{ $locality }}",
+    "addressRegion": "{{ $region }}",
+    "postalCode": "{{ $postalCode }}",
     "addressCountry": "BR"
   },
   "contactPoint": {

@@ -120,7 +120,7 @@ hrefTargetBlank = true
     # Footer Contact Info
     [params.footer.contactInfo]
       title   = "Informação de Contato"
-      address = "Av. Papa Pio XII, 471 - Macedo - Guarulhos - SP - 07113-000 "
+      address = "São Paulo, SP"
       phone   = "+55 11 91239-4099"
       email   = "contato@viaarto.com.br"
       # Footer Sitemap
